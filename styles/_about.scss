@@ -1,0 +1,13 @@
+.about-section{
+    background-image: url(/images/me.png) ;
+    background-repeat: no-repeat;
+ background-position: top;
+ background-size: 50%;
+    height: 100vh;;
+  font-size: $fontSize;
+  font-family: $light;
+  color: $base;
+  text-align: start;
+  padding: 1.5rem;
+   
+}

@@ -1,0 +1,118 @@
+.nav{
+   
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   align-items: center;
+   background-color: $base;
+//    height
+min-height: 75px;;
+//    stick to top
+   position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+   li{
+    list-style: none;
+}
+li a{
+    text-decoration: none;
+    color: $body;
+}
+   .logo-name{
+    position: absolute;
+    left: 0;
+    color: $body;
+    margin-left:1rem;
+    font-family:$logoName;
+   }
+   .nav-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    margin: 1rem;
+    gap: 1.5rem;
+   
+   }
+   .nav-item a:hover{
+    color: $downloadBtn;
+   }
+   @include respond(small){
+    .logo-name{
+        font-size: 2rem;
+        font-weight: $light;
+    }
+    .nav-menu{
+      
+   
+        @include flexCenter(column);
+        gap: 1.5rem;
+        position: fixed;
+        left: -100%;
+      
+        top: 8rem;
+        width: 95%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 30px $base;
+        background-color: $body;
+        padding: 3rem;
+        border-radius: 5px;
+        
+
+        .nav-item a{
+            color: $base;
+            font-size: 2rem;
+            cursor: pointer;
+            font-family: $font;
+           
+            &:hover{
+                color:$downloadBtn;
+            }
+          
+        }
+       
+    }
+      
+        // burger menu
+        .bar{
+            display: block;
+            width: 2rem;
+            height: 0.2rem;
+            margin: 5px auto;
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            background-color: $body
+        }
+      
+            .nav-menu.active {
+                
+                left: 0%;
+            }
+            .hamburger{
+                display: block;
+                cursor: pointer;
+                padding: 1rem;
+                margin-right: 1rem;
+                color:$body;
+            }
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+          
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+          
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            .download{
+                font-size: 1.2rem;
+               
+            }
+    }
+   
+}

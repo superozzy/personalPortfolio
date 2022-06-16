@@ -1,0 +1,31 @@
+    // SET VARIABLES
+       
+    $light:400;
+    $bold:700;
+    $fontSize:22px;
+    $base:#dbe8d4;
+    $downloadBtn:	#FF5B00;
+    $projectsBg:#2C3333;
+    $body:#222733;
+    $header:rgb(44, 43, 43);
+    $logoName:'Fascinate', cursive;
+    $font:'PT Sans', sans-serif;
+
+    // media queries
+    @mixin respond($breakpoint) {
+        @if($breakpoint == medium)  {
+          @media (max-width: 900px) { @content }
+        }
+        @if($breakpoint == small)  {
+          @media (max-width: 600px) { @content }
+        }
+      }
+      
+      // displayFLEX
+   @mixin flexCenter($direction) {
+    display: flex;
+    flex-direction:$direction;
+    justify-content: center;
+  align-items: center;
+  text-align: center;
+   }
